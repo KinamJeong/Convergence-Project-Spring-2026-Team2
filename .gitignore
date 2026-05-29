@@ -8,7 +8,6 @@ __pycache__/
 pretrained_models/
 
 # 훈련 데이터셋 및 실험 결과물 - 용량이 크고 환경마다 다름
-data/
 output/
 output_mvtd/
 
