@@ -1,0 +1,18 @@
+# 파이썬 캐시 및 실행 파일
+__pycache__/
+*.py[cod]
+
+# 모델 가중치 (체크포인트) 파일 - 용량이 커서 제외
+*.pth
+*.pth.tar
+pretrained_models/
+
+# 훈련 데이터셋 및 실험 결과물 - 용량이 크고 환경마다 다름
+data/
+output/
+output_mvtd/
+
+# IDE 및 시스템 자동 생성 파일
+.vscode/
+.idea/
+.DS_Store
