@@ -79,9 +79,6 @@ HIPTrack/pretrained_models/
 └── DropTrack_k700_800E_alldata.pth.tar
 ```
 
-> MVTD 레포 공유 링크에서 다운로드:
-> https://kuacae-my.sharepoint.com/:f:/g/personal/ahsan_bakht_ku_ac_ae/IgD3c4aIu83XQazIPFglANf8AVv_h1J8etNnaGo5PaCvfis?e=UHUr2R
-
 ---
 
 ## 학습 실행
