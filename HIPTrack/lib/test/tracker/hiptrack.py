@@ -83,6 +83,8 @@ class HIPTrack(BaseTracker):
         # save states
         self.state = info['init_bbox']
         self.frame_id = 0
+        from switch_recovery import SwitchRecoveryModule
+        self.recovery_module = SwitchRecoveryModule()
         if self.save_all_boxes: #一般是False
             '''save all predicted boxes'''
             all_boxes_save = info['init_bbox'] * self.cfg.MODEL.NUM_OBJECT_QUERIES
@@ -196,6 +198,25 @@ class HIPTrack(BaseTracker):
         #print(f"In frame: {self.frame_id}, the box is: {self.state}")
 
         topk_states = []
+
+
+        score_max = pred_score_map.max().item()
+        response_max = response.max().item()
+
+        corrected, info = self.recovery_module.update(response_max, list(self.state))
+        if info.get("recovered"):
+            self.state = clip_box(list(corrected), H, W, margin=10)
+        
+        log_dir = "./confidence_logs"
+        os.makedirs(log_dir, exist_ok=True)
+        log_path = os.path.join(log_dir, f"{self.seqName}_conf.csv")
+        if self.frame_id == 1 and not os.path.exists(log_path):
+            with open(log_path, "w") as f:
+                f.write("frame,score_max,response_max,x,y,w,h\n")
+        with open(log_path, "a") as f:
+            x, y, w, h = self.state
+            f.write(f"{self.frame_id},{score_max:.6f},{response_max:.6f},{x:.2f},{y:.2f},{w:.2f},{h:.2f}\n")
+
 
         # for debug
         if self.debug:
