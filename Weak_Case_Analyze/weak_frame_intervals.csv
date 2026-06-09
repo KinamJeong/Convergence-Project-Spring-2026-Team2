@@ -1,8 +1,0 @@
-﻿Sequence,Start_Frame,End_Frame,Duration,Main_Cause
-118-Boat,1002,1140,139,Low Norm Precision
-135-Boat,1963,1989,27,Low Precision (Center Shift)
-135-Boat,2028,2047,20,Low Precision (Center Shift)
-135-Boat,2234,2278,45,Low Precision (Center Shift)
-147-Boat,730,747,18,Low Precision (Center Shift)
-147-Boat,749,815,67,Low Precision (Center Shift)
-147-Boat,821,832,12,Low Precision (Center Shift)
