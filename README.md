@@ -103,7 +103,7 @@ python HIPTrack/tracking/analysis_result_solo.py
 | Configuration | AUC | OP75 |
 |---|---|---|
 | Baseline (Official Pretrained, ep0099) | TODO | TODO |
-| + Fine-tuning (ep0015) | TODO | TODO |
+| + Retraining (ep0015) | TODO | TODO |
 | + SwitchRecoveryModule | TODO | TODO |
 | + HRatioCorrectionModule | TODO | TODO |
 | **Full Pipeline (ep0015 + Both Modules)** | **TODO** | **TODO** |
