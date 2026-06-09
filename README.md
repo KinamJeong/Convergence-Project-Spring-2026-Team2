@@ -98,22 +98,17 @@ python HIPTrack/tracking/analysis_result_solo.py
 
 ## Our Results
 
-### Ablation Study (Validation Set)
+### Ablation Study  (Test Set Results)
 
 | Configuration | AUC | OP75 |
 |---|---|---|
-| Baseline (Official Pretrained, ep0099) | TODO | TODO |
-| + Retraining (ep0015) | TODO | TODO |
-| + SwitchRecoveryModule | TODO | TODO |
-| + HRatioCorrectionModule | TODO | TODO |
-| **Full Pipeline (ep0015 + Both Modules)** | **TODO** | **TODO** |
+| Baseline (Official Pretrained, ep0099) | 75.30 | 85.16 |
+| + SwitchRecoveryModule + HRatioCorrectionModule | TODO | TODO |
+| + Retraining (ep0034) | 81.19 | 86.69 |
 
-### Test Set Results
+| +  | TODO | TODO |
+| **Full Pipeline (ep0034 + Both Modules)** | **80.61** | **86.09** |
 
-| Configuration | AUC | OP75 |
-|---|---|---|
-| Baseline (Official Pretrained, ep0099) | TODO | TODO |
-| **Full Pipeline (ep0015 + Both Modules)** | **TODO** | **TODO** |
 
 ---
 
@@ -125,7 +120,7 @@ This project extends **HIPTrack** (CVPR 2024) for maritime vessel tracking on th
 
 | Module | Description |
 |---|---|
-| **Fine-tuning** | Re-trained HIPTrack on MVTD train set with online augmentation |
+| **Retraining** | Re-trained HIPTrack on MVTD train set with online augmentation |
 | **SwitchRecoveryModule** | Detects identity switches via response drop + cosine similarity, recovers bbox with constant-velocity extrapolation |
 | **HRatioCorrectionModule** | Corrects systematic H-ratio underestimation caused by vessel scale decrease, using sliding window h-drop detection |
 
